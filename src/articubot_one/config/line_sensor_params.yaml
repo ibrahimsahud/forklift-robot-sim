@@ -1,0 +1,55 @@
+line_sensor_controller:
+  ros__parameters:
+    enabled: false
+    mode: "OFF"
+    linear_speed: 0.14
+    max_angular_speed: 0.9
+    kp: 0.018
+    ki: 0.0
+    kd: 0.0015
+    heading_kp: 0.50
+    lookahead_weight: 0.30
+    position_scale: 30.0
+    heading_capture_threshold_rad: 0.35
+    heading_capture_lateral_weight: 0.25
+    derivative_filter_alpha: 0.25
+    turn_slowdown_position: 12.0
+    turn_slowdown_angle_rad: 0.45
+    turn_hold_position: 20.0
+    turn_hold_angle_rad: 0.90
+    min_turn_linear_scale: 0.35
+    dock_linear_speed: 0.03
+    dock_max_angular_speed: 0.45
+    dock_kp: 0.020
+    dock_ki: 0.0
+    dock_kd: 0.005
+    dock_position_deadband: 1.0
+    dock_alignment_hold_threshold: 6.0
+    dock_centered_slowdown_threshold: 12.0
+    integral_limit: 200.0
+    position_deadband: 1.0
+    stop_on_line_lost: true
+    seen_timeout_sec: 0.60
+
+line_sensor_mock_node:
+  ros__parameters:
+    source_mode: geometry
+    sensor_count: 5
+    publish_rate_hz: 20.0
+    seen_timeout_sec: 1.0
+    geometry_map_frame: map
+    geometry_base_frame: base_link
+    geometry_use_ground_truth: true
+    geometry_ground_truth_odom_topic: /ground_truth/odom
+    geometry_world_origin_x_m: -5.80
+    geometry_world_origin_y_m: -3.05
+    geometry_world_origin_yaw_rad: 1.5708
+    geometry_sensor_offset_x_m: 0.28
+    geometry_sensor_range_m: 0.15
+    geometry_seen_cross_track_m: 0.22
+    geometry_seen_along_margin_m: 0.60
+    position_amplitude: 30.0
+    position_frequency_hz: 0.08
+    base_value: 120
+    line_value: 850
+    seen: true

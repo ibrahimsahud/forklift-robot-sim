@@ -1,0 +1,509 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <world name="teknofest_arena">
+    <physics name="1ms" type="ignored">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <plugin filename="gz-sim-contact-system" name="gz::sim::systems::Contact"/>
+
+    <scene>
+      <ambient>0.55 0.55 0.55 1</ambient>
+      <background>0.72 0.74 0.76 1</background>
+      <shadows>true</shadows>
+    </scene>
+
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.85 0.85 0.82 1</diffuse>
+      <specular>0.25 0.25 0.25 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <model name="arena_floor">
+      <static>true</static>
+      <pose>0 0 -0.025 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry><box><size>14 8 0.05</size></box></geometry>
+          <surface><friction><ode><mu>3.0</mu><mu2>3.0</mu2></ode></friction></surface>
+        </collision>
+        <visual name="visual">
+          <geometry><box><size>14 8 0.05</size></box></geometry>
+          <material>
+            <ambient>0.62 0.62 0.58 1</ambient>
+            <diffuse>0.62 0.62 0.58 1</diffuse>
+            <specular>0.15 0.15 0.15 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Visual-only floor grid, matching the reference tile look. -->
+    <model name="grid_x_m6"><static>true</static><pose>-6 0 0.004 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.015 8.0 0.004</size></box></geometry><material><ambient>0.36 0.36 0.34 1</ambient><diffuse>0.36 0.36 0.34 1</diffuse></material></visual></link></model>
+    <model name="grid_x_m5"><static>true</static><pose>-5 0 0.004 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.015 8.0 0.004</size></box></geometry><material><ambient>0.36 0.36 0.34 1</ambient><diffuse>0.36 0.36 0.34 1</diffuse></material></visual></link></model>
+    <model name="grid_x_m4"><static>true</static><pose>-4 0 0.004 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.015 8.0 0.004</size></box></geometry><material><ambient>0.36 0.36 0.34 1</ambient><diffuse>0.36 0.36 0.34 1</diffuse></material></visual></link></model>
+    <model name="grid_x_m3"><static>true</static><pose>-3 0 0.004 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.015 8.0 0.004</size></box></geometry><material><ambient>0.36 0.36 0.34 1</ambient><diffuse>0.36 0.36 0.34 1</diffuse></material></visual></link></model>
+    <model name="grid_x_m2"><static>true</static><pose>-2 0 0.004 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.015 8.0 0.004</size></box></geometry><material><ambient>0.36 0.36 0.34 1</ambient><diffuse>0.36 0.36 0.34 1</diffuse></material></visual></link></model>
+    <model name="grid_x_m1"><static>true</static><pose>-1 0 0.004 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.015 8.0 0.004</size></box></geometry><material><ambient>0.36 0.36 0.34 1</ambient><diffuse>0.36 0.36 0.34 1</diffuse></material></visual></link></model>
+    <model name="grid_x_0"><static>true</static><pose>0 0 0.004 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.015 8.0 0.004</size></box></geometry><material><ambient>0.36 0.36 0.34 1</ambient><diffuse>0.36 0.36 0.34 1</diffuse></material></visual></link></model>
+    <model name="grid_x_1"><static>true</static><pose>1 0 0.004 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.015 8.0 0.004</size></box></geometry><material><ambient>0.36 0.36 0.34 1</ambient><diffuse>0.36 0.36 0.34 1</diffuse></material></visual></link></model>
+    <model name="grid_x_2"><static>true</static><pose>2 0 0.004 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.015 8.0 0.004</size></box></geometry><material><ambient>0.36 0.36 0.34 1</ambient><diffuse>0.36 0.36 0.34 1</diffuse></material></visual></link></model>
+    <model name="grid_x_3"><static>true</static><pose>3 0 0.004 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.015 8.0 0.004</size></box></geometry><material><ambient>0.36 0.36 0.34 1</ambient><diffuse>0.36 0.36 0.34 1</diffuse></material></visual></link></model>
+    <model name="grid_x_4"><static>true</static><pose>4 0 0.004 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.015 8.0 0.004</size></box></geometry><material><ambient>0.36 0.36 0.34 1</ambient><diffuse>0.36 0.36 0.34 1</diffuse></material></visual></link></model>
+    <model name="grid_x_5"><static>true</static><pose>5 0 0.004 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.015 8.0 0.004</size></box></geometry><material><ambient>0.36 0.36 0.34 1</ambient><diffuse>0.36 0.36 0.34 1</diffuse></material></visual></link></model>
+    <model name="grid_x_6"><static>true</static><pose>6 0 0.004 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.015 8.0 0.004</size></box></geometry><material><ambient>0.36 0.36 0.34 1</ambient><diffuse>0.36 0.36 0.34 1</diffuse></material></visual></link></model>
+    <model name="grid_y_m3"><static>true</static><pose>0 -3 0.004 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>14.0 0.015 0.004</size></box></geometry><material><ambient>0.36 0.36 0.34 1</ambient><diffuse>0.36 0.36 0.34 1</diffuse></material></visual></link></model>
+    <model name="grid_y_m2"><static>true</static><pose>0 -2 0.004 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>14.0 0.015 0.004</size></box></geometry><material><ambient>0.36 0.36 0.34 1</ambient><diffuse>0.36 0.36 0.34 1</diffuse></material></visual></link></model>
+    <model name="grid_y_m1"><static>true</static><pose>0 -1 0.004 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>14.0 0.015 0.004</size></box></geometry><material><ambient>0.36 0.36 0.34 1</ambient><diffuse>0.36 0.36 0.34 1</diffuse></material></visual></link></model>
+    <model name="grid_y_0"><static>true</static><pose>0 0 0.004 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>14.0 0.015 0.004</size></box></geometry><material><ambient>0.36 0.36 0.34 1</ambient><diffuse>0.36 0.36 0.34 1</diffuse></material></visual></link></model>
+    <model name="grid_y_1"><static>true</static><pose>0 1 0.004 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>14.0 0.015 0.004</size></box></geometry><material><ambient>0.36 0.36 0.34 1</ambient><diffuse>0.36 0.36 0.34 1</diffuse></material></visual></link></model>
+    <model name="grid_y_2"><static>true</static><pose>0 2 0.004 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>14.0 0.015 0.004</size></box></geometry><material><ambient>0.36 0.36 0.34 1</ambient><diffuse>0.36 0.36 0.34 1</diffuse></material></visual></link></model>
+    <model name="grid_y_3"><static>true</static><pose>0 3 0.004 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>14.0 0.015 0.004</size></box></geometry><material><ambient>0.36 0.36 0.34 1</ambient><diffuse>0.36 0.36 0.34 1</diffuse></material></visual></link></model>
+
+    <!-- Thick closed outer walls, all high enough for the LiDAR plane. -->
+    <model name="wall_south">
+      <static>true</static>
+      <pose>0 -4.15 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>14.6 0.30 1.0</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>14.6 0.30 1.0</size></box></geometry><material><ambient>0.48 0.48 0.46 1</ambient><diffuse>0.48 0.48 0.46 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="wall_north">
+      <static>true</static>
+      <pose>0 4.15 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>14.6 0.30 1.0</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>14.6 0.30 1.0</size></box></geometry><material><ambient>0.48 0.48 0.46 1</ambient><diffuse>0.48 0.48 0.46 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="wall_west">
+      <static>true</static>
+      <pose>-7.15 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>0.30 8.6 1.0</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>0.30 8.6 1.0</size></box></geometry><material><ambient>0.48 0.48 0.46 1</ambient><diffuse>0.48 0.48 0.46 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="wall_east">
+      <static>true</static>
+      <pose>7.15 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>0.30 8.6 1.0</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>0.30 8.6 1.0</size></box></geometry><material><ambient>0.48 0.48 0.46 1</ambient><diffuse>0.48 0.48 0.46 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <!-- Central divider with the gate opening in the middle. -->
+    <model name="middle_wall_north">
+      <static>true</static>
+      <pose>0 2.55 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>0.30 2.90 1.0</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>0.30 2.90 1.0</size></box></geometry><material><ambient>0.38 0.38 0.36 1</ambient><diffuse>0.38 0.38 0.36 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="middle_wall_south">
+      <static>true</static>
+      <pose>0 -2.55 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>0.30 2.90 1.0</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>0.30 2.90 1.0</size></box></geometry><material><ambient>0.38 0.38 0.36 1</ambient><diffuse>0.38 0.38 0.36 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="gate_post_left">
+      <static>true</static>
+      <pose>-0.42 1.05 0.45 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>0.12 0.36 0.90</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>0.12 0.36 0.90</size></box></geometry><material><ambient>0.90 0.28 0.14 1</ambient><diffuse>0.90 0.28 0.14 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="gate_post_right">
+      <static>true</static>
+      <pose>0.42 1.05 0.45 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>0.12 0.36 0.90</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>0.12 0.36 0.90</size></box></geometry><material><ambient>0.90 0.28 0.14 1</ambient><diffuse>0.90 0.28 0.14 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <!-- TEKNOFEST pallet/load samples. Pallet lower strips show the 0.10 / 0.20 / 0.10 / 0.20 / 0.10 m fork-entry pattern. -->
+    <model name="pallet_load_a1">
+      <static>false</static>
+      <pose>-5.50 2.65 0 0 0 0</pose>
+      <link name="pallet">
+        <inertial><mass>0.3</mass><inertia><ixx>0.009</ixx><iyy>0.011</iyy><izz>0.014</izz></inertia></inertial>
+        <collision name="lower_left"><pose>-0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><surface><friction><ode><mu>3.0</mu><mu2>3.0</mu2></ode></friction></surface></collision>
+        <collision name="lower_center"><pose>0 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><surface><friction><ode><mu>3.0</mu><mu2>3.0</mu2></ode></friction></surface></collision>
+        <collision name="lower_right"><pose>0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><surface><friction><ode><mu>3.0</mu><mu2>3.0</mu2></ode></friction></surface></collision>
+        <collision name="top_deck"><pose>0 0 0.095 0 0 0</pose><geometry><box><size>0.70 0.50 0.03</size></box></geometry><surface><friction><ode><mu>3.0</mu><mu2>3.0</mu2></ode></friction></surface></collision>
+        <collision name="fork_support_left"><pose>0 0.15 0.075 0 0 0</pose><geometry><box><size>0.82 0.16 0.010</size></box></geometry><surface><friction><ode><mu>3.5</mu><mu2>3.5</mu2></ode></friction></surface></collision>
+        <collision name="fork_support_right"><pose>0 -0.15 0.075 0 0 0</pose><geometry><box><size>0.82 0.16 0.010</size></box></geometry><surface><friction><ode><mu>3.5</mu><mu2>3.5</mu2></ode></friction></surface></collision>
+        <visual name="visual_lower_left"><pose>-0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><material><ambient>0.58 0.36 0.16 1</ambient><diffuse>0.58 0.36 0.16 1</diffuse></material></visual>
+        <visual name="visual_lower_center"><pose>0 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><material><ambient>0.58 0.36 0.16 1</ambient><diffuse>0.58 0.36 0.16 1</diffuse></material></visual>
+        <visual name="visual_lower_right"><pose>0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><material><ambient>0.58 0.36 0.16 1</ambient><diffuse>0.58 0.36 0.16 1</diffuse></material></visual>
+        <visual name="visual_top_deck"><pose>0 0 0.095 0 0 0</pose><geometry><box><size>0.70 0.50 0.03</size></box></geometry><material><ambient>0.70 0.45 0.22 1</ambient><diffuse>0.70 0.45 0.22 1</diffuse></material></visual>
+        <visual name="visual_fork_support_left"><pose>0 0.15 0.075 0 0 0</pose><geometry><box><size>0.82 0.16 0.010</size></box></geometry><material><ambient>0.62 0.40 0.18 1</ambient><diffuse>0.62 0.40 0.18 1</diffuse></material></visual>
+        <visual name="visual_fork_support_right"><pose>0 -0.15 0.075 0 0 0</pose><geometry><box><size>0.82 0.16 0.010</size></box></geometry><material><ambient>0.62 0.40 0.18 1</ambient><diffuse>0.62 0.40 0.18 1</diffuse></material></visual>
+      </link>
+      <link name="load_box">
+        <pose>0 0 0 0 0 0</pose>
+        <inertial><mass>0.5</mass><inertia><ixx>0.0065</ixx><iyy>0.0072</iyy><izz>0.0071</izz></inertia></inertial>
+        <collision name="collision"><pose>0 0 0.29 0 0 0</pose><geometry><box><size>0.50 0.42 0.36</size></box></geometry><surface><friction><ode><mu>3.0</mu><mu2>3.0</mu2></ode></friction></surface></collision>
+        <visual name="visual"><pose>0 0 0.29 0 0 0</pose><geometry><box><size>0.50 0.42 0.36</size></box></geometry><material><ambient>0.72 0.44 0.18 1</ambient><diffuse>0.72 0.44 0.18 1</diffuse></material></visual>
+      </link>
+      <joint name="load_fixed_joint" type="fixed"><parent>pallet</parent><child>load_box</child></joint>
+    </model>
+    <model name="pallet_load_a2">
+      <static>false</static>
+      <pose>-4.20 2.65 0 0 0 0</pose>
+      <link name="pallet">
+        <inertial><mass>1.5</mass><inertia><ixx>0.045</ixx><iyy>0.055</iyy><izz>0.070</izz></inertia></inertial>
+        <collision name="lower_left"><pose>-0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><surface><friction><ode><mu>3.0</mu><mu2>3.0</mu2></ode></friction></surface></collision>
+        <collision name="lower_center"><pose>0 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><surface><friction><ode><mu>3.0</mu><mu2>3.0</mu2></ode></friction></surface></collision>
+        <collision name="lower_right"><pose>0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><surface><friction><ode><mu>3.0</mu><mu2>3.0</mu2></ode></friction></surface></collision>
+        <collision name="top_deck"><pose>0 0 0.095 0 0 0</pose><geometry><box><size>0.70 0.50 0.03</size></box></geometry><surface><friction><ode><mu>3.0</mu><mu2>3.0</mu2></ode></friction></surface></collision>
+        <visual name="visual_lower_left"><pose>-0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><material><ambient>0.58 0.36 0.16 1</ambient><diffuse>0.58 0.36 0.16 1</diffuse></material></visual>
+        <visual name="visual_lower_center"><pose>0 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><material><ambient>0.58 0.36 0.16 1</ambient><diffuse>0.58 0.36 0.16 1</diffuse></material></visual>
+        <visual name="visual_lower_right"><pose>0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><material><ambient>0.58 0.36 0.16 1</ambient><diffuse>0.58 0.36 0.16 1</diffuse></material></visual>
+        <visual name="visual_top_deck"><pose>0 0 0.095 0 0 0</pose><geometry><box><size>0.70 0.50 0.03</size></box></geometry><material><ambient>0.70 0.45 0.22 1</ambient><diffuse>0.70 0.45 0.22 1</diffuse></material></visual>
+      </link>
+      <link name="load_box">
+        <inertial><mass>5.0</mass><inertia><ixx>0.065</ixx><iyy>0.072</iyy><izz>0.071</izz></inertia></inertial>
+        <collision name="collision"><pose>0 0 0.29 0 0 0</pose><geometry><box><size>0.50 0.42 0.36</size></box></geometry><surface><friction><ode><mu>3.0</mu><mu2>3.0</mu2></ode></friction></surface></collision>
+        <visual name="visual"><pose>0 0 0.29 0 0 0</pose><geometry><box><size>0.50 0.42 0.36</size></box></geometry><material><ambient>0.72 0.44 0.18 1</ambient><diffuse>0.72 0.44 0.18 1</diffuse></material></visual>
+      </link>
+      <joint name="load_fixed_joint" type="fixed"><parent>pallet</parent><child>load_box</child></joint>
+    </model>
+    <model name="pallet_load_a3">
+      <static>false</static>
+      <pose>-2.90 2.65 0 0 0 0</pose>
+      <link name="pallet">
+        <inertial><mass>1.5</mass><inertia><ixx>0.045</ixx><iyy>0.055</iyy><izz>0.070</izz></inertia></inertial>
+        <collision name="lower_left"><pose>-0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><surface><friction><ode><mu>3.0</mu><mu2>3.0</mu2></ode></friction></surface></collision>
+        <collision name="lower_center"><pose>0 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><surface><friction><ode><mu>3.0</mu><mu2>3.0</mu2></ode></friction></surface></collision>
+        <collision name="lower_right"><pose>0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><surface><friction><ode><mu>3.0</mu><mu2>3.0</mu2></ode></friction></surface></collision>
+        <collision name="top_deck"><pose>0 0 0.095 0 0 0</pose><geometry><box><size>0.70 0.50 0.03</size></box></geometry><surface><friction><ode><mu>3.0</mu><mu2>3.0</mu2></ode></friction></surface></collision>
+        <visual name="visual_lower_left"><pose>-0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><material><ambient>0.58 0.36 0.16 1</ambient><diffuse>0.58 0.36 0.16 1</diffuse></material></visual>
+        <visual name="visual_lower_center"><pose>0 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><material><ambient>0.58 0.36 0.16 1</ambient><diffuse>0.58 0.36 0.16 1</diffuse></material></visual>
+        <visual name="visual_lower_right"><pose>0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><material><ambient>0.58 0.36 0.16 1</ambient><diffuse>0.58 0.36 0.16 1</diffuse></material></visual>
+        <visual name="visual_top_deck"><pose>0 0 0.095 0 0 0</pose><geometry><box><size>0.70 0.50 0.03</size></box></geometry><material><ambient>0.70 0.45 0.22 1</ambient><diffuse>0.70 0.45 0.22 1</diffuse></material></visual>
+      </link>
+      <link name="load_box">
+        <inertial><mass>5.0</mass><inertia><ixx>0.065</ixx><iyy>0.072</iyy><izz>0.071</izz></inertia></inertial>
+        <collision name="collision"><pose>0 0 0.29 0 0 0</pose><geometry><box><size>0.50 0.42 0.36</size></box></geometry><surface><friction><ode><mu>3.0</mu><mu2>3.0</mu2></ode></friction></surface></collision>
+        <visual name="visual"><pose>0 0 0.29 0 0 0</pose><geometry><box><size>0.50 0.42 0.36</size></box></geometry><material><ambient>0.72 0.44 0.18 1</ambient><diffuse>0.72 0.44 0.18 1</diffuse></material></visual>
+      </link>
+      <joint name="load_fixed_joint" type="fixed"><parent>pallet</parent><child>load_box</child></joint>
+    </model>
+
+    <model name="drop_zone_b1"><static>true</static><pose>5.75 2.35 0.006 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.80 0.65 0.01</size></box></geometry><material><ambient>0.05 0.36 0.85 1</ambient><diffuse>0.05 0.36 0.85 1</diffuse></material></visual></link></model>
+    <model name="drop_zone_b2"><static>true</static><pose>5.75 0.35 0.006 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.80 0.65 0.01</size></box></geometry><material><ambient>0.05 0.36 0.85 1</ambient><diffuse>0.05 0.36 0.85 1</diffuse></material></visual></link></model>
+    <model name="drop_zone_b3"><static>true</static><pose>4.50 -2.35 0.006 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.80 0.65 0.01</size></box></geometry><material><ambient>0.05 0.36 0.85 1</ambient><diffuse>0.05 0.36 0.85 1</diffuse></material></visual></link></model>
+
+    <model name="empty_pallet_b1">
+      <static>true</static>
+      <pose>5.75 2.35 0 0 0 -1.5708</pose>
+      <link name="pallet">
+        <collision name="lower_left"><pose>-0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry></collision>
+        <collision name="lower_center"><pose>0 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry></collision>
+        <collision name="lower_right"><pose>0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry></collision>
+        <collision name="top_deck"><pose>0 0 0.095 0 0 0</pose><geometry><box><size>0.70 0.50 0.03</size></box></geometry></collision>
+        <visual name="visual_lower_left"><pose>-0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><material><ambient>0.58 0.36 0.16 1</ambient><diffuse>0.58 0.36 0.16 1</diffuse></material></visual>
+        <visual name="visual_lower_center"><pose>0 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><material><ambient>0.58 0.36 0.16 1</ambient><diffuse>0.58 0.36 0.16 1</diffuse></material></visual>
+        <visual name="visual_lower_right"><pose>0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><material><ambient>0.58 0.36 0.16 1</ambient><diffuse>0.58 0.36 0.16 1</diffuse></material></visual>
+        <visual name="visual_top_deck"><pose>0 0 0.095 0 0 0</pose><geometry><box><size>0.70 0.50 0.03</size></box></geometry><material><ambient>0.70 0.45 0.22 1</ambient><diffuse>0.70 0.45 0.22 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="empty_pallet_b2">
+      <static>true</static>
+      <pose>5.75 0.35 0 0 0 -1.5708</pose>
+      <link name="pallet">
+        <collision name="lower_left"><pose>-0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry></collision>
+        <collision name="lower_center"><pose>0 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry></collision>
+        <collision name="lower_right"><pose>0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry></collision>
+        <collision name="top_deck"><pose>0 0 0.095 0 0 0</pose><geometry><box><size>0.70 0.50 0.03</size></box></geometry></collision>
+        <visual name="visual_lower_left"><pose>-0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><material><ambient>0.58 0.36 0.16 1</ambient><diffuse>0.58 0.36 0.16 1</diffuse></material></visual>
+        <visual name="visual_lower_center"><pose>0 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><material><ambient>0.58 0.36 0.16 1</ambient><diffuse>0.58 0.36 0.16 1</diffuse></material></visual>
+        <visual name="visual_lower_right"><pose>0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><material><ambient>0.58 0.36 0.16 1</ambient><diffuse>0.58 0.36 0.16 1</diffuse></material></visual>
+        <visual name="visual_top_deck"><pose>0 0 0.095 0 0 0</pose><geometry><box><size>0.70 0.50 0.03</size></box></geometry><material><ambient>0.70 0.45 0.22 1</ambient><diffuse>0.70 0.45 0.22 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="empty_pallet_b3">
+      <static>true</static>
+      <pose>4.50 -2.35 0 0 0 -1.5708</pose>
+      <link name="pallet">
+        <!-- B3 is a visual placement target. The carried object already includes
+             its own pallet, so collision geometry here would block unloading. -->
+        <visual name="visual_lower_left"><pose>-0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><material><ambient>0.58 0.36 0.16 1</ambient><diffuse>0.58 0.36 0.16 1</diffuse></material></visual>
+        <visual name="visual_lower_center"><pose>0 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><material><ambient>0.58 0.36 0.16 1</ambient><diffuse>0.58 0.36 0.16 1</diffuse></material></visual>
+        <visual name="visual_lower_right"><pose>0.30 0 0.04 0 0 0</pose><geometry><box><size>0.10 0.50 0.08</size></box></geometry><material><ambient>0.58 0.36 0.16 1</ambient><diffuse>0.58 0.36 0.16 1</diffuse></material></visual>
+        <visual name="visual_top_deck"><pose>0 0 0.095 0 0 0</pose><geometry><box><size>0.70 0.50 0.03</size></box></geometry><material><ambient>0.70 0.45 0.22 1</ambient><diffuse>0.70 0.45 0.22 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <!-- Visual-only route lines. These intentionally have no collision geometry. -->
+    <model name="pickup_path_1_lower"><static>true</static><pose>-5.50 0.6625 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.05 0.675 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="pickup_path_1_upper"><static>true</static><pose>-5.50 1.7375 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.05 0.875 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="pickup_path_2_lower"><static>true</static><pose>-4.20 0.6625 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.05 0.675 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="pickup_path_2_upper"><static>true</static><pose>-4.20 1.7375 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.05 0.875 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="pickup_path_3_lower"><static>true</static><pose>-2.90 0.6625 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.05 0.675 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="pickup_path_3_upper"><static>true</static><pose>-2.90 1.7375 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.05 0.875 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="start_path_lower"><static>true</static><pose>-5.50 -2.2875 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.05 1.175 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="start_path_upper"><static>true</static><pose>-5.50 -0.9125 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.05 0.975 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+
+    <model name="main_route_dash_01"><static>true</static><pose>-5.10 0.00 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.55 0.05 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="main_route_dash_02"><static>true</static><pose>-4.25 0.00 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.55 0.05 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="main_route_dash_03"><static>true</static><pose>-3.40 0.00 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.55 0.05 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="main_route_dash_04"><static>true</static><pose>-2.55 0.00 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.55 0.05 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="main_route_dash_05_left"><static>true</static><pose>-1.8125 0.00 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.325 0.05 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="main_route_dash_05_right"><static>true</static><pose>-1.25 0.00 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.20 0.05 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="main_route_dash_06"><static>true</static><pose>-0.85 0.00 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.55 0.05 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="main_route_dash_07"><static>true</static><pose>0.25 0.00 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.55 0.05 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="main_route_dash_08"><static>true</static><pose>1.10 0.00 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.55 0.05 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="main_route_dash_09"><static>true</static><pose>1.95 0.00 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.55 0.05 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="main_route_dash_10"><static>true</static><pose>2.80 0.00 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.55 0.05 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="main_route_dash_11"><static>true</static><pose>3.65 0.00 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.55 0.05 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+
+    <model name="right_route_vertical_1"><static>true</static><pose>4.25 -1.6875 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.05 1.375 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="right_route_vertical_2"><static>true</static><pose>4.25 -0.25 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.05 0.90 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="right_route_vertical_3"><static>true</static><pose>4.25 1.35 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.05 1.70 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="right_route_vertical_4"><static>true</static><pose>4.25 2.55 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.05 0.10 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="right_route_top"><static>true</static><pose>4.95 2.35 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>1.05 0.05 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="right_route_middle"><static>true</static><pose>4.95 0.35 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>1.05 0.05 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+    <model name="right_route_lower"><static>true</static><pose>4.38 -2.35 0.018 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.30 0.05 0.012</size></box></geometry><material><ambient>0.02 0.02 0.02 1</ambient><diffuse>0.02 0.02 0.02 1</diffuse></material></visual></link></model>
+
+    <!-- Solid colored precision lines for camera-based fine alignment before pickup/drop. -->
+    <model name="precision_line_a1"><static>true</static><pose>-5.50 1.85 0.032 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.09 1.20 0.012</size></box></geometry><material><ambient>0.00 0.95 0.20 1</ambient><diffuse>0.00 0.95 0.20 1</diffuse></material></visual></link></model>
+    <model name="precision_line_a2"><static>true</static><pose>-4.20 1.85 0.032 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.09 1.20 0.012</size></box></geometry><material><ambient>0.00 0.95 0.20 1</ambient><diffuse>0.00 0.95 0.20 1</diffuse></material></visual></link></model>
+    <model name="precision_line_a3"><static>true</static><pose>-2.90 1.85 0.032 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.09 1.20 0.012</size></box></geometry><material><ambient>0.00 0.95 0.20 1</ambient><diffuse>0.00 0.95 0.20 1</diffuse></material></visual></link></model>
+    <model name="precision_line_b1"><static>true</static><pose>5.05 2.35 0.032 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>1.20 0.09 0.012</size></box></geometry><material><ambient>0.00 0.95 0.20 1</ambient><diffuse>0.00 0.95 0.20 1</diffuse></material></visual></link></model>
+    <model name="precision_line_b2"><static>true</static><pose>5.05 0.35 0.032 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>1.20 0.09 0.012</size></box></geometry><material><ambient>0.00 0.95 0.20 1</ambient><diffuse>0.00 0.95 0.20 1</diffuse></material></visual></link></model>
+    <model name="precision_line_b3"><static>true</static><pose>4.50 -1.60 0.032 0 0 0</pose><link name="link"><visual name="visual"><geometry><box><size>0.09 1.20 0.012</size></box></geometry><material><ambient>0.00 0.95 0.20 1</ambient><diffuse>0.00 0.95 0.20 1</diffuse></material></visual></link></model>
+
+    <model name="test_obstacle">
+      <static>true</static>
+      <pose>-6.40 3.30 0.35 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>0.35 0.35 0.70</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>0.35 0.35 0.70</size></box></geometry><material><ambient>0.90 0.12 0.08 1</ambient><diffuse>0.90 0.12 0.08 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <!-- Floor QR markers, placed about 1.5 m before their logical mission targets. -->
+    <model name="qr_start">
+      <static>true</static>
+      <pose>-5.50 -1.55 0.045 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <cast_shadows>false</cast_shadows>
+          <geometry><plane><normal>0 0 1</normal><size>0.25 0.25</size></plane></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0 0 0 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>qr/q1.png</albedo_map>
+                <metalness>0</metalness>
+                <roughness>1</roughness>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="qr_a1">
+      <static>true</static>
+      <pose>-5.50 1.15 0.045 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <cast_shadows>false</cast_shadows>
+          <geometry><plane><normal>0 0 1</normal><size>0.25 0.25</size></plane></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0 0 0 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>qr/q2.png</albedo_map>
+                <metalness>0</metalness>
+                <roughness>1</roughness>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="qr_a2">
+      <static>true</static>
+      <pose>-4.20 1.15 0.045 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <cast_shadows>false</cast_shadows>
+          <geometry><plane><normal>0 0 1</normal><size>0.25 0.25</size></plane></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0 0 0 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>qr/q3.png</albedo_map>
+                <metalness>0</metalness>
+                <roughness>1</roughness>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="qr_a3">
+      <static>true</static>
+      <pose>-2.90 1.15 0.045 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <cast_shadows>false</cast_shadows>
+          <geometry><plane><normal>0 0 1</normal><size>0.25 0.25</size></plane></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0 0 0 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>qr/q4.png</albedo_map>
+                <metalness>0</metalness>
+                <roughness>1</roughness>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="qr_gate_out">
+      <static>true</static>
+      <pose>-1.50 0.00 0.045 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <cast_shadows>false</cast_shadows>
+          <geometry><plane><normal>0 0 1</normal><size>0.25 0.25</size></plane></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0 0 0 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>qr/q5.png</albedo_map>
+                <metalness>0</metalness>
+                <roughness>1</roughness>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="qr_gate_in">
+      <static>true</static>
+      <pose>1.50 0.00 0.045 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <cast_shadows>false</cast_shadows>
+          <geometry><plane><normal>0 0 1</normal><size>0.25 0.25</size></plane></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0 0 0 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>qr/q6.png</albedo_map>
+                <metalness>0</metalness>
+                <roughness>1</roughness>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="qr_b1">
+      <static>true</static>
+      <pose>4.25 2.35 0.045 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <cast_shadows>false</cast_shadows>
+          <geometry><plane><normal>0 0 1</normal><size>0.25 0.25</size></plane></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0 0 0 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>qr/q7.png</albedo_map>
+                <metalness>0</metalness>
+                <roughness>1</roughness>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="qr_b2">
+      <static>true</static>
+      <pose>4.25 0.35 0.045 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <cast_shadows>false</cast_shadows>
+          <geometry><plane><normal>0 0 1</normal><size>0.25 0.25</size></plane></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0 0 0 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>qr/q8.png</albedo_map>
+                <metalness>0</metalness>
+                <roughness>1</roughness>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="qr_b3">
+      <static>true</static>
+      <pose>4.60 -1.85 0.045 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <cast_shadows>false</cast_shadows>
+          <geometry><plane><normal>0 0 1</normal><size>0.25 0.25</size></plane></geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0 0 0 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>qr/q9.png</albedo_map>
+                <metalness>0</metalness>
+                <roughness>1</roughness>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

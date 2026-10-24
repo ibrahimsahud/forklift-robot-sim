@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!--
+        LiDAR placement:
+        - Put LiDAR near the top-center of robot body
+        - Keep it low enough to see pallets/load obstacles
+        - Default z=0.42 balances pallet visibility against self-detections
+        - min range stays at 0.20 to ignore very close self-reflections
+    -->
+    <xacro:arg name="laser_x" default="0.00"/>
+    <xacro:arg name="laser_y" default="0.00"/>
+    <xacro:arg name="laser_z" default="0.35"/>
+
+    <joint name="laser_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="laser_frame"/>
+        <origin xyz="$(arg laser_x) $(arg laser_y) $(arg laser_z)" rpy="0 0 0"/>
+    </joint>
+
+    <gazebo reference="laser_joint">
+        <preserveFixedJoint>true</preserveFixedJoint>
+    </gazebo>
+
+    <link name="laser_frame">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.055" length="0.03"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+
+        <xacro:inertial_cylinder mass="0.1" length="0.04" radius="0.05">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_cylinder>
+    </link>
+
+    <gazebo reference="laser_frame">
+        <material>Gazebo/Blue</material>
+
+        <sensor name="laser" type="gpu_lidar">
+            <pose>0 0 0 0 0 0</pose>
+            <visualize>true</visualize>
+            <always_on>true</always_on>
+            <update_rate>15</update_rate>
+
+            <lidar>
+                <scan>
+                    <horizontal>
+                        <samples>720</samples>
+                        <resolution>1</resolution>
+                        <min_angle>-3.14159</min_angle>
+                        <max_angle>3.14159</max_angle>
+                    </horizontal>
+                    <vertical>
+                        <samples>1</samples>
+                        <resolution>1</resolution>
+                        <min_angle>0</min_angle>
+                        <max_angle>0</max_angle>
+                    </vertical>
+                </scan>
+
+                <range>
+                    <min>0.20</min>
+                    <max>10.0</max>
+                    <resolution>0.01</resolution>
+                </range>
+            </lidar>
+
+            <topic>scan</topic>
+            <gz_frame_id>laser_frame</gz_frame_id>
+        </sensor>
+    </gazebo>
+
+</robot>

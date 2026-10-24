@@ -1,0 +1,147 @@
+points:
+  # Nav2/odom coordinates are relative to the robot start pose:
+  # world (-5.80, -3.05, yaw 1.5708) -> odom (0.0, 0.0, yaw 0.0).
+  start:
+    x: 0.00
+    y: 0.00
+    yaw: 0.0
+
+  START:
+    x: 1.50
+    y: -0.30
+    yaw: -3.1416
+
+  gate:
+    x: 3.05
+    y: -4.30
+    yaw: -1.5708
+
+  GATE_OUT:
+    x: 3.05
+    y: -4.30
+    yaw: -1.5708
+
+  GATE_PASS_OUT:
+    x: 3.05
+    y: -6.55
+    yaw: -1.5708
+
+  GATE_IN:
+    x: 3.05
+    y: -7.30
+    yaw: 1.5708
+
+  RETURN_GATE_CLEAR:
+    x: 3.05
+    y: -4.30
+    yaw: 1.5708
+
+  RETURN_MAIN_ROUTE:
+    x: 3.05
+    y: -0.30
+    yaw: 1.5708
+
+  pickup_1:
+    x: 3.15
+    y: -0.30
+    yaw: 3.1416
+
+  A1_QR_APPROACH:
+    x: 3.50
+    y: -0.30
+    yaw: 3.1416
+
+  A1:
+    x: 4.20
+    y: -0.30
+    yaw: 3.1416
+
+  pickup_2:
+    x: 3.15
+    y: -1.60
+    yaw: 3.1416
+
+  A2_QR_APPROACH:
+    x: 3.50
+    y: -1.60
+    yaw: 3.1416
+
+  A2:
+    x: 4.20
+    y: -1.60
+    yaw: 3.1416
+
+  pickup_3:
+    x: 3.15
+    y: -2.90
+    yaw: 3.1416
+
+  A3_QR_APPROACH:
+    x: 3.50
+    y: -2.90
+    yaw: 3.1416
+
+  A3:
+    x: 4.20
+    y: -2.90
+    yaw: 3.1416
+
+  drop_1:
+    x: 5.40
+    y: -9.00
+    yaw: 1.5708
+
+  B1:
+    x: 5.40
+    y: -10.05
+    yaw: -1.5708
+
+  drop_2:
+    x: 3.40
+    y: -9.00
+    yaw: 1.5708
+
+  B2:
+    x: 3.40
+    y: -10.05
+    yaw: -1.5708
+
+  drop_3:
+    x: 3.10
+    y: -10.30
+    yaw: 0.0
+
+  B3:
+    x: 2.20
+    y: -10.30
+    yaw: -3.1416
+
+  pallet_A1:
+    x: 5.70
+    y: -0.30
+    yaw: 0.0
+
+  pallet_A2:
+    x: 5.70
+    y: -1.60
+    yaw: 0.0
+
+  pallet_A3:
+    x: 5.70
+    y: -2.90
+    yaw: 0.0
+
+  drop_B1:
+    x: 5.40
+    y: -11.55
+    yaw: -1.5708
+
+  drop_B2:
+    x: 3.40
+    y: -11.55
+    yaw: -1.5708
+
+  drop_B3:
+    x: 0.70
+    y: -10.30
+    yaw: -3.1416

@@ -1,0 +1,48 @@
+twist_mux:
+  ros__parameters:
+    use_stamped: false
+    topics:
+      raw:
+        topic   : cmd_vel
+        timeout : 0.5
+        priority: 5
+      navigation:
+        topic   : cmd_vel_nav_smoothed
+        timeout : 0.5
+        priority: 10
+      route_fused:
+        topic   : cmd_vel_route_fused
+        timeout : 0.5
+        priority: 15
+      line_sensor:
+        topic   : cmd_vel_line_sensor
+        timeout : 0.5
+        priority: 25
+      pose_line:
+        topic   : cmd_vel_pose_line
+        timeout : 0.5
+        priority: 26
+      tracker:
+        topic   : cmd_vel_tracker
+        timeout : 0.5
+        priority: 20
+      explorer:
+        topic   : cmd_vel_explore
+        timeout : 0.5
+        priority: 30
+      docking:
+        topic   : cmd_vel_docking
+        timeout : 0.5
+        priority: 40
+      safety:
+        topic   : cmd_vel_safety
+        timeout : 0.5
+        priority: 200
+      joystick:
+        topic   : cmd_vel_joy
+        timeout : 0.5
+        priority: 100
+      keyboard:
+        topic   : cmd_vel_keyboard
+        timeout : 0.5
+        priority: 110

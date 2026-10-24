@@ -1,0 +1,188 @@
+material QR/Q1
+{
+  technique
+  {
+    pass
+    {
+      lighting off
+      ambient 1 1 1 1
+      diffuse 1 1 1 1
+      specular 0 0 0 1
+      cull_hardware none
+      cull_software none
+      texture_unit
+      {
+        texture q1.png
+        filtering none
+      }
+    }
+  }
+}
+
+material QR/Q2
+{
+  technique
+  {
+    pass
+    {
+      lighting off
+      ambient 1 1 1 1
+      diffuse 1 1 1 1
+      specular 0 0 0 1
+      cull_hardware none
+      cull_software none
+      texture_unit
+      {
+        texture q2.png
+        filtering none
+      }
+    }
+  }
+}
+
+material QR/Q3
+{
+  technique
+  {
+    pass
+    {
+      lighting off
+      ambient 1 1 1 1
+      diffuse 1 1 1 1
+      specular 0 0 0 1
+      cull_hardware none
+      cull_software none
+      texture_unit
+      {
+        texture q3.png
+        filtering none
+      }
+    }
+  }
+}
+
+material QR/Q4
+{
+  technique
+  {
+    pass
+    {
+      lighting off
+      ambient 1 1 1 1
+      diffuse 1 1 1 1
+      specular 0 0 0 1
+      cull_hardware none
+      cull_software none
+      texture_unit
+      {
+        texture q4.png
+        filtering none
+      }
+    }
+  }
+}
+
+material QR/Q5
+{
+  technique
+  {
+    pass
+    {
+      lighting off
+      ambient 1 1 1 1
+      diffuse 1 1 1 1
+      specular 0 0 0 1
+      cull_hardware none
+      cull_software none
+      texture_unit
+      {
+        texture q5.png
+        filtering none
+      }
+    }
+  }
+}
+
+material QR/Q6
+{
+  technique
+  {
+    pass
+    {
+      lighting off
+      ambient 1 1 1 1
+      diffuse 1 1 1 1
+      specular 0 0 0 1
+      cull_hardware none
+      cull_software none
+      texture_unit
+      {
+        texture q6.png
+        filtering none
+      }
+    }
+  }
+}
+
+material QR/Q7
+{
+  technique
+  {
+    pass
+    {
+      lighting off
+      ambient 1 1 1 1
+      diffuse 1 1 1 1
+      specular 0 0 0 1
+      cull_hardware none
+      cull_software none
+      texture_unit
+      {
+        texture q7.png
+        filtering none
+      }
+    }
+  }
+}
+
+material QR/Q8
+{
+  technique
+  {
+    pass
+    {
+      lighting off
+      ambient 1 1 1 1
+      diffuse 1 1 1 1
+      specular 0 0 0 1
+      cull_hardware none
+      cull_software none
+      texture_unit
+      {
+        texture q8.png
+        filtering none
+      }
+    }
+  }
+}
+
+material QR/Q9
+{
+  technique
+  {
+    pass
+    {
+      lighting off
+      ambient 1 1 1 1
+      diffuse 1 1 1 1
+      specular 0 0 0 1
+      cull_hardware none
+      cull_software none
+      texture_unit
+      {
+        texture q9.png
+        filtering none
+      }
+    }
+  }
+}

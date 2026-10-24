@@ -1,0 +1,175 @@
+scenarios:
+  A1_TO_B3:
+    route:
+      - START
+      - Q1
+      - D1
+      - Q2
+      - A1_STAGING_CALIBRATED
+      - A1_DOCK_CALIBRATED
+      - D1
+      - D2
+      - D3
+      - Q5
+      - Q6
+      - D4
+      - D6
+      - Q7
+      - B3_STAGING
+      - B3_DOCK_CALIBRATED
+      - B3_STAGING
+      - D6
+      - D4
+      - Q6
+      - Q5
+      - D3
+      - D2
+      - D1
+      - Q1
+      - START
+
+  A1_TO_B2:
+    route:
+      - START
+      - Q1
+      - D1
+      - Q2
+      - A1_STAGING
+      - A1_DOCK
+      - D1
+      - D2
+      - D3
+      - Q5
+      - Q6
+      - D4
+      - Q8
+      - B2_STAGING
+      - B2_DOCK
+
+  A1_TO_B1:
+    route:
+      - START
+      - Q1
+      - D1
+      - Q2
+      - A1_STAGING
+      - A1_DOCK
+      - D1
+      - D2
+      - D3
+      - Q5
+      - Q6
+      - D4
+      - D5
+      - Q9
+      - B1_STAGING
+      - B1_DOCK
+
+  A2_TO_B1:
+    route:
+      - START
+      - Q1
+      - D1
+      - D2
+      - Q3
+      - A2_STAGING
+      - A2_DOCK
+      - D3
+      - Q5
+      - Q6
+      - D4
+      - D5
+      - Q9
+      - B1_STAGING
+      - B1_DOCK
+
+  A2_TO_B2:
+    route:
+      - START
+      - Q1
+      - D1
+      - D2
+      - Q3
+      - A2_STAGING
+      - A2_DOCK
+      - D3
+      - Q5
+      - Q6
+      - D4
+      - Q8
+      - B2_STAGING
+      - B2_DOCK
+
+  A2_TO_B3:
+    route:
+      - START
+      - Q1
+      - D1
+      - D2
+      - Q3
+      - A2_STAGING
+      - A2_DOCK
+      - D3
+      - Q5
+      - Q6
+      - D4
+      - D6
+      - Q7
+      - B3_STAGING
+      - B3_DOCK
+
+  A3_TO_B1:
+    route:
+      - START
+      - Q1
+      - D1
+      - D2
+      - D3
+      - Q4
+      - A3_STAGING
+      - A3_DOCK
+      - D3
+      - Q5
+      - Q6
+      - D4
+      - D5
+      - Q9
+      - B1_STAGING
+      - B1_DOCK
+
+  A3_TO_B2:
+    route:
+      - START
+      - Q1
+      - D1
+      - D2
+      - D3
+      - Q4
+      - A3_STAGING
+      - A3_DOCK
+      - D3
+      - Q5
+      - Q6
+      - D4
+      - Q8
+      - B2_STAGING
+      - B2_DOCK
+
+  A3_TO_B3:
+    route:
+      - START
+      - Q1
+      - D1
+      - D2
+      - D3
+      - Q4
+      - A3_STAGING
+      - A3_DOCK
+      - D3
+      - Q5
+      - Q6
+      - D4
+      - D6
+      - Q7
+      - B3_STAGING
+      - B3_DOCK

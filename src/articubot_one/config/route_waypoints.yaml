@@ -1,0 +1,175 @@
+map:
+  yaml: maps/teknofest_arena_map_new.yaml
+  frame_id: map
+
+qr_aliases:
+  Q1: START
+  Q2: A1_STAGING
+  Q3: A2_STAGING
+  Q4: A3_STAGING
+  Q5: GATE_OUT
+  Q6: GATE_IN
+  Q7: B3_STAGING
+  Q8: B2_STAGING
+  Q9: B1_STAGING
+
+waypoints:
+  START:
+    x: -0.0995
+    y: -0.3197
+    yaw: -0.0042
+
+  D1:
+    x: 2.9846
+    y: -0.3197
+    yaw: -0.0079
+
+  D1_LINE_TEST:
+    x: 2.9846
+    y: -0.1701
+    yaw: -0.0079
+
+  D1_LINE:
+    x: 2.9846
+    y: -0.1701
+    yaw: -0.0079
+
+  D2:
+    x: 3.0807
+    y: -1.4735
+    yaw: -1.6105
+
+  D3:
+    x: 3.0807
+    y: -2.7939
+    yaw: -1.5923
+
+  D4:
+    x: 3.2121
+    y: -10.1396
+    yaw: -1.5546
+
+  D6:
+    x: 2.5178
+    y: -10.0672
+    yaw: -3.1188
+
+  D5:
+    x: 5.2356
+    y: -10.1109
+    yaw: -1.4521
+
+  GATE_OUT:
+    x: 3.0499
+    y: -4.5169
+    yaw: -1.5766
+
+  GATE_IN:
+    x: 3.0281
+    y: -6.8909
+    yaw: -1.5800
+
+  A1_STAGING:
+    x: 4.2591
+    y: -0.2308
+    yaw: -0.0041
+
+  A1_STAGING_CALIBRATED:
+    x: 4.5000
+    y: -0.3000
+    yaw: 0.0000
+
+  A1_STAGING_PRE:
+    x: 2.9846
+    y: -0.1701
+    yaw: -0.0079
+
+  A1_DOCK:
+    x: 4.7700
+    y: -0.2422
+    yaw: -3.1398
+
+  A1_DOCK_CALIBRATED:
+    x: 4.7700
+    y: -0.3000
+    yaw: -3.1416
+
+  A2_STAGING:
+    x: 4.2648
+    y: -1.5153
+    yaw: -0.0324
+
+  A2_STAGING_PRE:
+    x: 3.0807
+    y: -1.4735
+    yaw: -1.6105
+
+  A2_DOCK:
+    x: 5.4486
+    y: -1.5002
+    yaw: 3.1367
+
+  A3_STAGING:
+    x: 4.4029
+    y: -2.8331
+    yaw: 0.0235
+
+  A3_STAGING_PRE:
+    x: 3.0807
+    y: -2.7939
+    yaw: -1.5923
+
+  A3_DOCK:
+    x: 5.4430
+    y: -2.8284
+    yaw: 3.1362
+
+  B1_STAGING:
+    x: 5.2300
+    y: -10.0486
+    yaw: -1.5841
+
+  B1_STAGING_PRE:
+    x: 5.2356
+    y: -10.1109
+    yaw: -1.4521
+
+  B1_DOCK:
+    x: 5.2564
+    y: -11.3481
+    yaw: 1.5824
+
+  B2_STAGING:
+    x: 3.3657
+    y: -10.0228
+    yaw: -1.5628
+
+  B2_STAGING_PRE:
+    x: 3.2121
+    y: -10.1396
+    yaw: -1.5546
+
+  B2_DOCK:
+    x: 3.2454
+    y: -11.3272
+    yaw: -1.5820
+
+  B3_STAGING:
+    x: 1.9040
+    y: -10.3000
+    yaw: 3.1416
+
+  B3_STAGING_PRE:
+    x: 2.5178
+    y: -10.0672
+    yaw: -3.1188
+
+  B3_DOCK:
+    x: 1.2500
+    y: -10.3000
+    yaw: 0.0000
+
+  B3_DOCK_CALIBRATED:
+    x: 1.2500
+    y: -10.3000
+    yaw: 0.0000

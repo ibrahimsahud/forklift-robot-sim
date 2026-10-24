@@ -1,0 +1,19 @@
+obstacle_alarm_avoid:
+  ros__parameters:
+    input_cmd_topic: /cmd_vel_joy
+    output_cmd_topic: /cmd_vel
+    distance_topic: /sensors/distance
+    buzzer_cmd_topic: /sensors/buzzer_cmd
+    led_cmd_topic: /sensors/led_cmd
+    status_topic: /obstacle_guard/status
+
+    threshold_m: 0.50
+    clear_m: 0.60
+    alarm_wait_sec: 10.0
+    control_hz: 20.0
+
+    turn_speed: 0.70
+    forward_speed: 0.18
+    turn_time_sec: 1.20
+    bypass_forward_sec: 1.50
+    avoid_direction: left

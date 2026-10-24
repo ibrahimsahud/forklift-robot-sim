@@ -1,0 +1,46 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 30
+    use_sim_time: true
+
+    diff_cont:
+      type: diff_drive_controller/DiffDriveController
+
+    joint_broad:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+diff_cont:
+  ros__parameters:
+    publish_rate: 50.0
+
+    # Frames
+    odom_frame_id: odom
+    base_frame_id: base_link
+    enable_odom_tf: true
+
+    # Wheels
+    left_wheel_names: ['left_wheel_joint']
+    right_wheel_names: ['right_wheel_joint']
+    wheel_separation: 0.62
+    wheel_radius: 0.055
+
+    # Command topic type
+    use_stamped_vel: false
+
+    # Odometry
+    open_loop: false
+    position_feedback: true
+
+    # Safety
+    cmd_vel_timeout: 0.5
+    publish_limited_velocity: true
+    velocity_rolling_window_size: 10
+
+    # Covariance
+    pose_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.01]
+    twist_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.01]
+
+
+joint_broad:
+  ros__parameters:
+    use_sim_time: true

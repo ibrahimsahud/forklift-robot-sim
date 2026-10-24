@@ -1,0 +1,107 @@
+road_segments:
+  START_TO_D1:
+    start: START
+    end: D1
+  D1_TO_D2:
+    start: D1
+    end: D2
+  D2_TO_D3:
+    start: D2
+    end: D3
+  D3_TO_GATE_OUT:
+    start: D3
+    end: GATE_OUT
+  GATE_OUT_TO_GATE_IN:
+    start: GATE_OUT
+    end: GATE_IN
+  GATE_IN_TO_D4:
+    start: GATE_IN
+    end: D4
+  D4_TO_D6:
+    start: D4
+    end: D6
+  D6_TO_B3_STAGING:
+    start: D6
+    end: B3_STAGING
+  B3_DOCK_CALIBRATED_TO_B3_STAGING:
+    start: B3_DOCK_CALIBRATED
+    end: B3_STAGING
+  B3_STAGING_TO_D6:
+    start: B3_STAGING
+    end: D6
+  D6_TO_D4:
+    start: D6
+    end: D4
+  D4_TO_GATE_IN:
+    start: D4
+    end: GATE_IN
+  GATE_IN_TO_GATE_OUT:
+    start: GATE_IN
+    end: GATE_OUT
+  GATE_OUT_TO_D3:
+    start: GATE_OUT
+    end: D3
+  D3_TO_D2:
+    start: D3
+    end: D2
+  D2_TO_D1:
+    start: D2
+    end: D1
+  D1_TO_START:
+    start: D1
+    end: START
+  D1_TO_A1_STAGING:
+    start: D1
+    end: A1_STAGING
+  D1_TO_A1_STAGING_CALIBRATED:
+    start: D1
+    end: A1_STAGING_CALIBRATED
+  A1_STAGING_CALIBRATED_TO_D1:
+    start: A1_STAGING_CALIBRATED
+    end: D1
+
+approach_segments:
+  A1_STAGING:
+    start: A1_STAGING_PRE
+    end: A1_STAGING
+  A2_STAGING:
+    start: A2_STAGING_PRE
+    end: A2_STAGING
+  A3_STAGING:
+    start: A3_STAGING_PRE
+    end: A3_STAGING
+  B1_STAGING:
+    start: B1_STAGING_PRE
+    end: B1_STAGING
+  B2_STAGING:
+    start: B2_STAGING_PRE
+    end: B2_STAGING
+  B3_STAGING:
+    start: B3_STAGING_PRE
+    end: B3_STAGING
+
+dock_segments:
+  A1_DOCK:
+    start: A1_STAGING
+    end: A1_DOCK
+  A1_DOCK_CALIBRATED:
+    start: A1_STAGING_CALIBRATED
+    end: A1_DOCK_CALIBRATED
+  A2_DOCK:
+    start: A2_STAGING
+    end: A2_DOCK
+  A3_DOCK:
+    start: A3_STAGING
+    end: A3_DOCK
+  B1_DOCK:
+    start: B1_STAGING
+    end: B1_DOCK
+  B2_DOCK:
+    start: B2_STAGING
+    end: B2_DOCK
+  B3_DOCK:
+    start: B3_STAGING
+    end: B3_DOCK
+  B3_DOCK_CALIBRATED:
+    start: B3_STAGING
+    end: B3_DOCK_CALIBRATED

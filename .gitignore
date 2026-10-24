@@ -1,0 +1,43 @@
+# ROS / colcon
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Runtime / logs / tests
+test_artifacts/
+*.log
+.ros/
+
+# Gazebo / simulation cache
+.gazebo/
+.gz/
+
+# Secrets / env
+.env
+*.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.yaml
+secrets*.yml
+
+# Local debug/archive
+archive/
+qr_test_debug.png
+*.bak.yaml
+*.bag
+*.db3
+artifacts/

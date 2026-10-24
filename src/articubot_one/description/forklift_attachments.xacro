@@ -1,0 +1,324 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:property name="fork_lift_max_height" value="0.35"/>
+    <xacro:property name="fork_mast_height" value="0.565"/>
+    <xacro:property name="fork_mast_width" value="0.62"/>
+    <xacro:property name="fork_length" value="0.65"/>
+    <xacro:property name="fork_width" value="0.06"/>
+    <xacro:property name="fork_height" value="0.025"/>
+    <xacro:property name="fork_spacing" value="0.30"/>
+
+    <material name="forklift_yellow">
+        <color rgba="0.45 0.47 0.48 1"/>
+    </material>
+
+    <material name="dark_grey">
+        <color rgba="0.08 0.08 0.08 1"/>
+    </material>
+
+    <material name="steel">
+        <color rgba="0.45 0.47 0.48 1"/>
+    </material>
+
+    <joint name="forklift_body_cover_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="forklift_body_cover"/>
+        <origin xyz="-0.10 0 0.075" rpy="0 0 0"/>
+    </joint>
+
+    <link name="forklift_body_cover">
+        <visual>
+            <origin xyz="0 0 0.10" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.36 0.66 0.20"/>
+            </geometry>
+            <material name="forklift_yellow"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0.10" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.36 0.66 0.20"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="8.0" x="0.36" y="0.66" z="0.20">
+            <origin xyz="0 0 0.10" rpy="0 0 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="forklift_counterweight_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="forklift_counterweight"/>
+        <origin xyz="-0.24 0 0.075" rpy="0 0 0"/>
+    </joint>
+
+    <link name="forklift_counterweight">
+        <visual>
+            <origin xyz="0 0 0.10" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.12 0.66 0.20"/>
+            </geometry>
+            <material name="dark_grey"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0.10" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.12 0.66 0.20"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="6.0" x="0.12" y="0.66" z="0.20">
+            <origin xyz="0 0 0.10" rpy="0 0 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="forklift_guard_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="forklift_overhead_guard"/>
+        <origin xyz="-0.10 0 0.20" rpy="0 0 0"/>
+    </joint>
+
+    <link name="forklift_overhead_guard">
+        <visual>
+            <origin xyz="-0.08 0.305 0.17" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.035 0.025 0.32"/>
+            </geometry>
+            <material name="dark_grey"/>
+        </visual>
+        <visual>
+            <origin xyz="-0.08 -0.305 0.17" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.035 0.025 0.32"/>
+            </geometry>
+            <material name="dark_grey"/>
+        </visual>
+        <visual>
+            <origin xyz="0.06 0.305 0.17" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.035 0.025 0.32"/>
+            </geometry>
+            <material name="dark_grey"/>
+        </visual>
+        <visual>
+            <origin xyz="0.06 -0.305 0.17" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.035 0.025 0.32"/>
+            </geometry>
+            <material name="dark_grey"/>
+        </visual>
+        <visual>
+            <origin xyz="-0.01 0 0.345" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.24 0.66 0.025"/>
+            </geometry>
+            <material name="dark_grey"/>
+        </visual>
+        <collision name="rear_left_post_collision">
+            <origin xyz="-0.08 0.305 0.17" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.035 0.025 0.32"/>
+            </geometry>
+        </collision>
+        <collision name="rear_right_post_collision">
+            <origin xyz="-0.08 -0.305 0.17" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.035 0.025 0.32"/>
+            </geometry>
+        </collision>
+        <collision name="front_left_post_collision">
+            <origin xyz="0.06 0.305 0.17" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.035 0.025 0.32"/>
+            </geometry>
+        </collision>
+        <collision name="front_right_post_collision">
+            <origin xyz="0.06 -0.305 0.17" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.035 0.025 0.32"/>
+            </geometry>
+        </collision>
+        <collision name="roof_collision">
+            <origin xyz="-0.01 0 0.345" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.24 0.66 0.025"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.8" x="0.24" y="0.64" z="0.38">
+            <origin xyz="-0.01 0 0.19" rpy="0 0 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="forklift_mast_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="forklift_mast"/>
+        <origin xyz="-0.04 0 0.035" rpy="0 0 ${pi}"/>
+    </joint>
+
+    <link name="forklift_mast">
+        <visual>
+            <origin xyz="0 ${fork_mast_width / 2.0} ${fork_mast_height / 2.0}" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.04 0.025 ${fork_mast_height}"/>
+            </geometry>
+            <material name="dark_grey"/>
+        </visual>
+        <visual>
+            <origin xyz="0 -${fork_mast_width / 2.0} ${fork_mast_height / 2.0}" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.04 0.025 ${fork_mast_height}"/>
+            </geometry>
+            <material name="dark_grey"/>
+        </visual>
+        <visual>
+            <origin xyz="0 0 ${fork_mast_height - 0.02}" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.045 ${fork_mast_width} 0.035"/>
+            </geometry>
+            <material name="dark_grey"/>
+        </visual>
+        <collision name="left_rail_collision">
+            <origin xyz="0 ${fork_mast_width / 2.0} ${fork_mast_height / 2.0}" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.05 0.035 ${fork_mast_height}"/>
+            </geometry>
+        </collision>
+        <collision name="right_rail_collision">
+            <origin xyz="0 -${fork_mast_width / 2.0} ${fork_mast_height / 2.0}" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.05 0.035 ${fork_mast_height}"/>
+            </geometry>
+        </collision>
+        <collision name="top_bar_collision">
+            <origin xyz="0 0 ${fork_mast_height - 0.02}" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.055 ${fork_mast_width} 0.035"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.45" x="0.05" y="${fork_mast_width}" z="${fork_mast_height}">
+            <origin xyz="0 0 ${fork_mast_height / 2.0}" rpy="0 0 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="fork_carriage_joint" type="prismatic">
+        <parent link="forklift_mast"/>
+        <child link="fork_carriage"/>
+        <origin xyz="0.035 0 -0.055" rpy="0 0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="$(arg fork_lift_min_height)" upper="${fork_lift_max_height}" effort="2000.0" velocity="0.35"/>
+        <dynamics damping="8.0" friction="1.0"/>
+    </joint>
+
+    <link name="fork_carriage">
+        <visual>
+            <origin xyz="0.015 0 0.05" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.04 0.42 0.10"/>
+            </geometry>
+            <material name="steel"/>
+        </visual>
+        <collision>
+            <origin xyz="0.015 0 0.05" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.04 0.42 0.10"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.8" x="0.04" y="0.42" z="0.10">
+            <origin xyz="0.015 0 0.05" rpy="0 0 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="left_fork_joint" type="fixed">
+        <parent link="fork_carriage"/>
+        <child link="left_fork"/>
+        <origin xyz="0.055 ${fork_spacing / 2.0} 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="left_fork">
+        <visual>
+            <origin xyz="${fork_length / 2.0} 0 ${fork_height / 2.0}" rpy="0 0 0"/>
+            <geometry>
+                <box size="${fork_length} ${fork_width} ${fork_height}"/>
+            </geometry>
+            <material name="dark_grey"/>
+        </visual>
+        <collision>
+            <origin xyz="${fork_length / 2.0} 0 ${fork_height / 2.0}" rpy="0 0 0"/>
+            <geometry>
+                <box size="${fork_length} ${fork_width} ${fork_height}"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.18" x="${fork_length}" y="${fork_width}" z="${fork_height}">
+            <origin xyz="${fork_length / 2.0} 0 ${fork_height / 2.0}" rpy="0 0 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="right_fork_joint" type="fixed">
+        <parent link="fork_carriage"/>
+        <child link="right_fork"/>
+        <origin xyz="0.055 -${fork_spacing / 2.0} 0.0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="right_fork">
+        <visual>
+            <origin xyz="${fork_length / 2.0} 0 ${fork_height / 2.0}" rpy="0 0 0"/>
+            <geometry>
+                <box size="${fork_length} ${fork_width} ${fork_height}"/>
+            </geometry>
+            <material name="dark_grey"/>
+        </visual>
+        <collision>
+            <origin xyz="${fork_length / 2.0} 0 ${fork_height / 2.0}" rpy="0 0 0"/>
+            <geometry>
+                <box size="${fork_length} ${fork_width} ${fork_height}"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.18" x="${fork_length}" y="${fork_width}" z="${fork_height}">
+            <origin xyz="${fork_length / 2.0} 0 ${fork_height / 2.0}" rpy="0 0 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <gazebo reference="forklift_body_cover">
+        <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <gazebo reference="forklift_counterweight">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference="forklift_mast">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference="fork_carriage">
+        <material>Gazebo/Black</material>
+        <mu1>4.0</mu1>
+        <mu2>4.0</mu2>
+    </gazebo>
+
+    <gazebo reference="left_fork">
+        <material>Gazebo/Black</material>
+        <mu1>4.0</mu1>
+        <mu2>4.0</mu2>
+    </gazebo>
+
+    <gazebo reference="right_fork">
+        <material>Gazebo/Black</material>
+        <mu1>4.0</mu1>
+        <mu2>4.0</mu2>
+    </gazebo>
+
+    <xacro:if value="$(arg sim_mode)">
+        <gazebo>
+            <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+                <joint_name>fork_carriage_joint</joint_name>
+                <topic>fork_position_cmd</topic>
+                <p_gain>6000.0</p_gain>
+                <i_gain>0.0</i_gain>
+                <d_gain>120.0</d_gain>
+                <cmd_min>-2000.0</cmd_min>
+                <cmd_max>2000.0</cmd_max>
+            </plugin>
+        </gazebo>
+    </xacro:if>
+
+</robot>

@@ -1,0 +1,268 @@
+metadata:
+  map_frame: map
+  base_frame: base_link
+  camera_frame: camera_link_optical
+  qr_size_m: 0.2
+  qr_forward_offset_m: 0.1
+  generated_by: qr_waypoint_logger
+  updated_at_ros: '1970-01-01T00:39:32+00:00'
+  updated_at_wall_utc: '2026-05-17T21:42:20.804681+00:00'
+qrs:
+  START:
+    qr_id: START
+    timestamp_ros: '1970-01-01T00:06:00.800000+00:00'
+    timestamp_ros_sec: 360.8
+    timestamp_wall_utc: '2026-05-17T20:58:48.252504+00:00'
+    seen_count: 306
+    accepted_sample_count: 5
+    rejected_outlier_count: 0
+    pose_source: estimated_qr_pose_map
+    camera_calibration_available: true
+    quality_mean: 0.9456
+    quality_last: 1.0
+    width_px_mean: 191.33
+    robot_staging_pose_map:
+      x: 0.068
+      y: 0.0
+      z: 0.0
+      qx: 0.0
+      qy: 0.0
+      qz: -0.016999
+      qw: 0.999856
+      yaw: -0.034
+    camera_pose_map:
+      x: 0.3678
+      y: -0.0102
+      z: 0.36
+      qx: -0.588682
+      qy: 0.609045
+      qz: -0.382179
+      qw: 0.369401
+      yaw: -1.604796
+    estimated_qr_pose_map:
+      x: 1.1687
+      y: -0.1955
+      z: -0.0922
+      qx: -0.748674
+      qy: 0.662926
+      qz: 0.003967
+      qw: -0.000446
+      yaw: -1.449471
+    fallback_qr_forward_offset_m: null
+    camera_frame: camera_link_optical
+    reprojection_error_px_mean: 0.6746
+  A2:
+    qr_id: A2
+    timestamp_ros: '1970-01-01T00:06:26.500000+00:00'
+    timestamp_ros_sec: 386.5
+    timestamp_wall_utc: '2026-05-17T20:59:20.255193+00:00'
+    seen_count: 5
+    accepted_sample_count: 5
+    rejected_outlier_count: 0
+    pose_source: estimated_qr_pose_map
+    camera_calibration_available: true
+    quality_mean: 0.9715
+    quality_last: 0.9296
+    width_px_mean: 170.82
+    robot_staging_pose_map:
+      x: 3.5238
+      y: -0.4905
+      z: 0.0
+      qx: 0.0
+      qy: 0.0
+      qz: -0.526593
+      qw: 0.850117
+      yaw: -1.109177
+    camera_pose_map:
+      x: 3.6575
+      y: -0.7591
+      z: 0.36
+      qx: -0.193775
+      qy: 0.824581
+      qz: -0.517428
+      qw: 0.121594
+      yaw: -2.679973
+    estimated_qr_pose_map:
+      x: 4.0893
+      y: -1.415
+      z: -0.0964
+      qx: -0.716994
+      qy: 0.697079
+      qz: 0.000151
+      qw: 0.000182
+      yaw: -1.542631
+    fallback_qr_forward_offset_m: null
+    camera_frame: camera_link_optical
+    reprojection_error_px_mean: 0.2186
+  GATE_OUT:
+    qr_id: GATE_OUT
+    timestamp_ros: '1970-01-01T00:37:57.500000+00:00'
+    timestamp_ros_sec: 2277.5
+    timestamp_wall_utc: '2026-05-17T21:40:28.275234+00:00'
+    seen_count: 100
+    accepted_sample_count: 49
+    rejected_outlier_count: 2
+    pose_source: estimated_qr_pose_map
+    camera_calibration_available: true
+    quality_mean: 0.9612
+    quality_last: 0.9612
+    width_px_mean: 154.53
+    robot_staging_pose_map:
+      x: 3.0968
+      y: -2.9778
+      z: 0.0
+      qx: 0.0
+      qy: 0.0
+      qz: -0.698509
+      qw: 0.715601
+      yaw: -1.546625
+    camera_pose_map:
+      x: 3.1041
+      y: -3.2777
+      z: 0.36
+      qx: -0.010237
+      qy: 0.846982
+      qz: -0.531485
+      qw: 0.006424
+      yaw: -3.117421
+    estimated_qr_pose_map:
+      x: 3.0062
+      y: -4.3022
+      z: -0.0995
+      qx: -0.703879
+      qy: 0.71032
+      qz: -0.000281
+      qw: -0.00072
+      yaw: -1.579905
+    fallback_qr_forward_offset_m: null
+    camera_frame: camera_link_optical
+    reprojection_error_px_mean: 0.0879
+  B2:
+    qr_id: B2
+    timestamp_ros: '1970-01-01T00:08:22+00:00'
+    timestamp_ros_sec: 502.0
+    timestamp_wall_utc: '2026-05-17T21:01:54.213969+00:00'
+    seen_count: 8
+    accepted_sample_count: 8
+    rejected_outlier_count: 0
+    pose_source: estimated_qr_pose_map
+    camera_calibration_available: true
+    quality_mean: 0.9567
+    quality_last: 0.9887
+    width_px_mean: 146.59
+    robot_staging_pose_map:
+      x: 2.279
+      y: -9.1895
+      z: 0.0
+      qx: 0.0
+      qy: 0.0
+      qz: -0.309567
+      qw: 0.950878
+      yaw: -0.629476
+    camera_pose_map:
+      x: 2.5214
+      y: -9.366
+      z: 0.36
+      qx: -0.384113
+      qy: 0.754944
+      qz: -0.47373
+      qw: 0.241032
+      yaw: -2.200272
+    estimated_qr_pose_map:
+      x: 3.2824
+      y: -9.8712
+      z: -0.0971
+      qx: -0.711475
+      qy: 0.702712
+      qz: 6.7e-05
+      qw: -9.2e-05
+      yaw: -1.558404
+    fallback_qr_forward_offset_m: null
+    camera_frame: camera_link_optical
+    reprojection_error_px_mean: 0.3281
+  B1:
+    qr_id: B1
+    timestamp_ros: '1970-01-01T00:08:34.400000+00:00'
+    timestamp_ros_sec: 514.4
+    timestamp_wall_utc: '2026-05-17T21:02:10.694412+00:00'
+    seen_count: 7
+    accepted_sample_count: 7
+    rejected_outlier_count: 0
+    pose_source: estimated_qr_pose_map
+    camera_calibration_available: true
+    quality_mean: 0.9669
+    quality_last: 0.9544
+    width_px_mean: 210.29
+    robot_staging_pose_map:
+      x: 4.044
+      y: -9.8626
+      z: 0.0
+      qx: 0.0
+      qy: 0.0
+      qz: -0.121038
+      qw: 0.992648
+      yaw: -0.242671
+    camera_pose_map:
+      x: 4.3352
+      y: -9.9347
+      z: 0.36
+      qx: -0.522051
+      qy: 0.667042
+      qz: -0.418572
+      qw: 0.327589
+      yaw: -1.813468
+    estimated_qr_pose_map:
+      x: 5.1295
+      y: -9.9263
+      z: -0.0967
+      qx: -0.70768
+      qy: 0.706533
+      qz: 0.000296
+      qw: 0.000624
+      yaw: -1.569175
+    fallback_qr_forward_offset_m: null
+    camera_frame: camera_link_optical
+    reprojection_error_px_mean: 0.3785
+  B3:
+    qr_id: B3
+    timestamp_ros: '1970-01-01T00:39:32+00:00'
+    timestamp_ros_sec: 2372.0
+    timestamp_wall_utc: '2026-05-17T21:42:20.804564+00:00'
+    seen_count: 14
+    accepted_sample_count: 5
+    rejected_outlier_count: 1
+    pose_source: estimated_qr_pose_map
+    camera_calibration_available: true
+    quality_mean: 0.9903
+    quality_last: 1.0
+    width_px_mean: 211.34
+    robot_staging_pose_map:
+      x: 3.1678
+      y: -9.9907
+      z: 0.0
+      qx: 0.0
+      qy: 0.0
+      qz: -0.953999
+      qw: 0.299809
+      yaw: -2.532608
+    camera_pose_map:
+      x: 2.9288
+      y: -10.1564
+      z: 0.36
+      qx: 0.391828
+      qy: 0.750969
+      qz: -0.471236
+      qw: -0.245873
+      yaw: 2.179781
+    estimated_qr_pose_map:
+      x: 2.2969
+      y: -10.5455
+      z: -0.0962
+      qx: 0.882845
+      qy: -0.469663
+      qz: 0.000436
+      qw: -0.000735
+      yaw: -0.977818
+    fallback_qr_forward_offset_m: null
+    camera_frame: camera_link_optical
+    reprojection_error_px_mean: 0.2537

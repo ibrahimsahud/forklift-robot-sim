@@ -1,0 +1,77 @@
+line_follower:
+  ros__parameters:
+    use_sim_time: true
+    camera_topic: /camera/image_raw
+    enable_topic: /line_follower/enable
+    mode_topic: /line_follower/mode
+    profile_topic: /line_follower/profile
+    context_topic: /line_follower/context
+    nav_cmd_topic: /cmd_vel_nav_smoothed
+    nav_cmd_fallback_topic: /cmd_vel_nav
+    line_cmd_topic: /cmd_vel_line
+    fused_cmd_topic: /cmd_vel_route_fused
+    status_topic: /line_follower/status
+    debug_image_topic: /line_follower/debug_image
+    camera_line_status_topic: /camera_line/status
+    camera_line_debug_image_topic: /camera_line/debug_image
+    camera_line_reverse: false
+    publish_debug_image: true
+
+    dark_threshold: 90
+    min_area: 250.0
+    line_timeout_sec: 0.5
+    nav_timeout_sec: 0.5
+    control_hz: 20.0
+    route_line_dark_threshold: 90
+    route_line_hsv_lower: [35, 45, 45]
+    route_line_hsv_upper: [95, 255, 255]
+    dock_line_dark_threshold: 90
+    dock_line_hsv_lower: [35, 45, 45]
+    dock_line_hsv_upper: [95, 255, 255]
+    b_side_dock_line_dark_threshold: 120
+    b_side_dock_line_hsv_lower: [20, 35, 35]
+    b_side_dock_line_hsv_upper: [110, 255, 255]
+
+    route_offset_gain: 0.30
+    route_angle_gain: 0.14
+    route_max_angular_correction: 0.35
+    route_max_total_angular: 1.20
+    route_linear_scale_when_lost: 0.70
+    route_linear_scale_when_detected: 1.00
+
+    line_primary_linear_speed: 0.08
+    line_primary_offset_gain: 1.05
+    line_primary_angle_gain: 0.75
+    line_primary_derivative_gain: 0.10
+    line_primary_max_angular: 1.00
+    centered_error_px_threshold: 25.0
+    line_primary_rotate_only_error_px: 90.0
+    line_primary_follow_reenter_error_px: 45.0
+    line_primary_acquire_linear_speed: 0.015
+    line_primary_search_angular_speed: 0.40
+    line_primary_search_timeout_sec: 3.0
+    line_primary_error_stall_timeout_sec: 1.2
+    line_primary_transient_line_lost_sec: 0.25
+    line_primary_capture_good_frames: 4
+    line_primary_follow_bad_frames: 6
+    line_primary_aligned_angle_threshold_rad: 0.18
+    line_primary_arc_capture_linear_speed: 0.025
+    line_primary_reverse_speed: 0.035
+    line_primary_reverse_duration_sec: 0.7
+    line_primary_capture_min_angular: 0.55
+    line_primary_capture_smoothing_alpha: 1.0
+    line_primary_error_ema_alpha: 0.22
+    line_primary_angle_ema_alpha: 0.20
+    line_primary_loss_confirm_frames: 4
+    line_primary_capture_enter_error_px: 85.0
+    line_primary_follow_enter_error_px: 30.0
+    line_primary_follow_exit_error_px: 70.0
+
+    docking_linear_speed: 0.055
+    docking_offset_gain: 0.50
+    docking_angle_gain: 0.20
+    docking_max_angular: 0.22
+
+    angular_deadband: 0.015
+    smoothing_alpha: 0.35
+    debug_save_root: /tmp/tekno_robot_artifacts

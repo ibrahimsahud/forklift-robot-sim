@@ -1,0 +1,21 @@
+qr_waypoint_logger:
+  ros__parameters:
+    camera_topic: /camera/image_raw
+    camera_info_topic: /camera/camera_info
+    map_frame: map
+    base_frame: base_link
+    camera_frame: camera_link_optical
+    qr_size_m: 0.20
+    qr_forward_offset_m: 0.10
+    min_qr_width_px: 20.0
+    min_stable_detections: 5
+    min_pose_detections: 3
+    sample_window_sec: 45.0
+    staging_position_tolerance_m: 0.40
+    qr_position_tolerance_m: 0.35
+    max_reprojection_error_px: 10.0
+    max_qr_range_m: 4.0
+    min_quality_score: 0.25
+    save_path: /tmp/tekno_robot_artifacts/qr_map_points.yaml
+    backup_existing_file: true
+    debug_logging: false

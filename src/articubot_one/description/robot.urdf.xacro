@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
+
+    <xacro:arg name="use_ros2_control" default="true"/>
+    <xacro:arg name="sim_mode" default="true"/>
+    <xacro:arg name="fork_lift_min_height" default="0.0"/>
+
+    <xacro:include filename="robot_core.xacro" />
+
+    <xacro:if value="$(arg use_ros2_control)">
+        <xacro:include filename="ros2_control.xacro" />
+    </xacro:if>
+    <xacro:unless value="$(arg use_ros2_control)">
+        <xacro:include filename="gazebo_control.xacro" />
+    </xacro:unless>
+    <xacro:include filename="forklift_attachments.xacro" />
+    <xacro:include filename="lidar.xacro" />
+    <xacro:include filename="camera.xacro" />
+    <!-- <xacro:include filename="depth_camera.xacro" /> -->
+
+    <xacro:include filename="face.xacro" />
+
+    <xacro:if value="$(arg sim_mode)">
+        <gazebo>
+            <plugin filename="gz-sim-odometry-publisher-system"
+                name="gz::sim::systems::OdometryPublisher">
+                <dimensions>2</dimensions>
+                <odom_topic>/ground_truth/odom</odom_topic>
+                <odom_frame>world</odom_frame>
+                <robot_base_frame>base_link</robot_base_frame>
+                <odom_publish_frequency>30</odom_publish_frequency>
+            </plugin>
+        </gazebo>
+    </xacro:if>
+
+</robot>
